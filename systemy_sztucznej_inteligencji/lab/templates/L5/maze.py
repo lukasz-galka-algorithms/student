@@ -219,18 +219,7 @@ class Maze:
         """
         # TODO - BLOCK START
         # TASK#9
-        g = Graph()
-        for r in range(self.rows):
-            for c in range(self.cols):
-                if not self.is_passable(r, c):
-                    continue
-                u = (r, c)
-                g.add_node(u)
-                for nr, nc in self.neighbors4(r, c):
-                    ch_v = self.grid[nr][nc]
-                    cost = self.cost_of.get(ch_v, 1)
-                    g.add_edge(u, (nr, nc), cost)
-        return g
+        pass
         # TODO - BLOCK END
 
 class StudentID:
