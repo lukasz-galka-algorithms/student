@@ -27,7 +27,8 @@ class Experiment:
         self.y_train = self.y_test = None
         self.clf = None
 
-    def _compute_anomaly_scores(self, estimator, X):
+    @staticmethod
+    def _compute_anomaly_scores(estimator, X):
         """
         Compute anomaly scores where higher = more anomalous.
 
@@ -49,7 +50,8 @@ class Experiment:
             return (y_tmp == -1).astype(float)
         return np.zeros(len(X), dtype=float)
 
-    def _binarize_scores(self,estimator, X, scores, thresholding):
+    @staticmethod
+    def _binarize_scores(estimator, X, scores, thresholding):
         """
         Convert continuous scores into binary predictions (1 = anomaly).
 
